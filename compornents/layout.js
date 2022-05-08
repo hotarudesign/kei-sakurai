@@ -1,4 +1,3 @@
-import Home from "../pages";
 import Link from "next/link";
 import styles from "./layout.module.css";
 import Head from "next/head";
@@ -13,19 +12,27 @@ export default function Layout({ children, home }) {
         <meta name="description" content="KeiSakuraiのポートフォリオです。" />
       </Head>
       <header>
-        <div className="flex">
-          <Link href="/About">
-            <a>About</a>
-          </Link>
-          <Link href="/">
-            <a>
-              <h1>{name}</h1>
-            </a>
-          </Link>
-          <Link href="/Works">
-            <a>Works</a>
-          </Link>
-        </div>
+        <nav>
+          <ul className="">
+            <li>
+              <Link href="/About">
+                <a>About</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a>
+                  <h1>{name}</h1>
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/Works">
+                <a>Works</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </header>
       <main>{children}</main>
       {!home && (
