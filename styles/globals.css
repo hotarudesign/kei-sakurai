@@ -598,6 +598,12 @@ img {
   max-width: 100%;
 }
 
+.home .box {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: #000;
+}
 .home__imgbox {
   width: 200%;
   height: 400px;

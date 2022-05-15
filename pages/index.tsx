@@ -6,7 +6,16 @@ import { GetStaticProps } from "next";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-import ScrollEvent from "../compornents/ScrollEvent";
+// import ScrollEvent from "../compornents/ScrollEvent";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".box", {
+  scrollTrigger: ".box",
+  x: 500,
+});
 
 export default function Home({ data }) {
   return (
@@ -21,7 +30,8 @@ export default function Home({ data }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="home">
-          <ScrollEvent />
+          <div className="box"></div>
+          {/* <ScrollEvent /> */}
           <p className="home__hero">Coding and Design</p>
         </main>
       </Layout>

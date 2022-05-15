@@ -16,6 +16,12 @@ img {
 }
 
 .home {
+  .box {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: #000;
+  }
   &__imgbox {
     width: 200%;
     height: 400px;
