@@ -1,0 +1,9 @@
+$numColor: #b2b2b2;
+$linkColor: #0070f3;
+
+$sp: 500px;
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}

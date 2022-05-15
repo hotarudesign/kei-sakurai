@@ -1,1 +1,56 @@
+$sp: 500px;
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
 
+.header {
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 2% 1%;
+  @include sp {
+    position: relative;
+    padding: 8% 0;
+  }
+  .g-nav__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @include sp {
+      position: absolute;
+      top: 15%;
+      right: 5px;
+      flex-direction: column;
+    }
+    &_item {
+      font-size: 40px;
+      @include sp {
+        margin-bottom: 10%;
+        font-size: 26px;
+      }
+      &.logo {
+        position: relative;
+        top: 10px;
+        font-size: 80px;
+        font-weight: bold;
+        @include sp {
+          display: none;
+          top: 8px;
+          font-size: 40px;
+        }
+      }
+    }
+  }
+  .logo_sp {
+    display: none;
+    @include sp {
+      display: inline-block;
+      margin-top: 10%;
+      font-size: 80px;
+      font-weight: bold;
+      line-height: 1em;
+    }
+  }
+}

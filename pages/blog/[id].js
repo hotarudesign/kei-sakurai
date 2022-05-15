@@ -1,16 +1,89 @@
 import { client } from "../../libs/client";
+import Layout from "../../compornents/layout";
+import Link from "next/link";
 
-export default function BolgId({ works }) {
+export default function BlogId({ works }) {
   return (
-    <main>
-      <h1>{works.title}</h1>
-      <p></p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${works.body}`,
-        }}
-      />
-    </main>
+    <Layout>
+      <main className="post">
+        <div className="post__inner">
+          <div className="post__title-area">
+            <Link href="https://takamurayuyalp1.takamura-yuya.mixh.jp/the_automation/">
+              <a
+                className="post__title-area_ttl"
+                dangerouslySetInnerHTML={{
+                  __html: `${works.title}`,
+                }}
+              ></a>
+            </Link>
+            <div
+              className="post__title-area_desc"
+              dangerouslySetInnerHTML={{
+                __html: `${works.body}`,
+              }}
+            />
+          </div>
+          <div className="post__imgwrap">
+            <img src={works.top_image.url} />
+          </div>
+          <div className="post__sec">
+            <div className="post__sec_ttlcontainer">
+              <p className="num">01</p>
+              <h3 className="post__sec_ttl">ご依頼の背景</h3>
+            </div>
+            <div className="post__sec01_detailarea">
+              <div className="post__sec01_detailarea-text">
+                <div
+                  className="post__sec01_detailarea-desc"
+                  dangerouslySetInnerHTML={{
+                    __html: `${works.text_1}`,
+                  }}
+                />
+                <div
+                  className="post__sec01_detailarea-desc"
+                  dangerouslySetInnerHTML={{
+                    __html: `${works.text_2}`,
+                  }}
+                />
+              </div>
+              <div className="post__detailarea-imgwrap">
+                <img src={works.image_screen.url} />
+              </div>
+            </div>
+          </div>
+          <div className="post__sec">
+            <div className="post__sec_ttlcontainer">
+              <p className="num">02</p>
+              <h3 className="post__sec_ttl">制作で苦労した点、工夫した点</h3>
+            </div>
+            <div className="post__sec02_detailarea">
+              <div className="post__sec02_detailarea-text">
+                <div
+                  className="post__sec02_detailarea-desc"
+                  dangerouslySetInnerHTML={{
+                    __html: `${works.text_3}`,
+                  }}
+                />
+                <div
+                  className="post__sec02_detailarea-desc"
+                  dangerouslySetInnerHTML={{
+                    __html: `${works.text_4}`,
+                  }}
+                />
+              </div>
+              <div className="post__detailarea-imgwrap">
+                <img src={works.image_item.url} />
+              </div>
+            </div>
+          </div>
+          <div className="post__sec-sp">
+            <img className="sp-image" src={works.sp_1.url} />
+            <img className="sp-image" src={works.sp_2.url} />
+            <img className="sp-image" src={works.sp_3.url} />
+          </div>
+        </div>
+      </main>
+    </Layout>
   );
 }
 
