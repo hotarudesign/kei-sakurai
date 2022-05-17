@@ -91,3 +91,43 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+// import Link from "next/link";
+// import { client } from "../libs/client";
+// import { Pagenation } from "../compornents/Pagenation";
+
+// export default function Works({ works, totalCount }) {
+//   return (
+//     <div>
+//       <ul>
+//         {works.map((works) => (
+//           <li key={works.id}>
+//             <Link href={`/blog/${works.id}`}>
+//               <a
+//                 className="works__archive_ttl"
+//                 dangerouslySetInnerHTML={{
+//                   __html: `${works.title}`,
+//                 }}
+//               ></a>
+//             </Link>
+//           </li>
+//         ))}
+//       </ul>
+//       <Pagenation totalCount={totalCount} />
+//     </div>
+//   );
+// }
+
+// export const getStaticProps = async () => {
+//   const data = await client.get({
+//     endpoint: "works",
+//     queries: { limit: 20, offset: 0, limit: 3 },
+//   });
+
+//   return {
+//     props: {
+//       works: data.contents,
+//       totalCount: data.totalCount,
+//     },
+//   };
+// };

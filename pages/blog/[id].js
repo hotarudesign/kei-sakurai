@@ -1,8 +1,9 @@
 import { client } from "../../libs/client";
 import Layout from "../../compornents/layout";
 import Link from "next/link";
+import { Pagination } from "../../compornents/Pagenation";
 
-export default function BlogId({ works }) {
+export default function BlogId({ works, totalCount }) {
   return (
     <Layout>
       <main className="post">
@@ -81,13 +82,14 @@ export default function BlogId({ works }) {
             <img className="sp-image" src={works.sp_2.url} />
             <img className="sp-image" src={works.sp_3.url} />
           </div>
+          {/* <Pagination totalCount={totalCount} /> */}
         </div>
       </main>
     </Layout>
   );
 }
 
-// 静的生成のためのパスを指定します
+// 静的生成のためのパスを指定
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "works" });
 
@@ -95,7 +97,7 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
+// データをテンプレートに受け渡す部分の処理を記述
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "works", contentId: id });
@@ -106,3 +108,59 @@ export const getStaticProps = async (context) => {
     },
   };
 };
+
+// import { client } from "../../libs/client";
+// import Layout from "../../compornents/layout";
+// import Link from "next/link";
+// import { Pagination } from "../../compornents/Pagenation";
+
+// export default function worksPageId({ works, totalCount }) {
+//   return (
+//     <div>
+//       <ul>
+//         {works.map((works) => (
+//           <li key={works.id}>
+//             <Link href={`/blog/${works.id}`}>
+//               <a>{works.title}</a>
+//             </Link>
+//           </li>
+//         ))}
+//       </ul>
+//       <Pagination totalCount={totalCount} />
+//     </div>
+//   );
+// }
+
+// // 動的なページを作成
+// // 動的なページを作成
+// export const getStaticPaths = async () => {
+//   const repos = await client.get({ endpoint: "works" });
+
+//   const pageNumbers = [];
+//   const PER_PAGE = 3;
+//   const range = (start, end) =>
+//     [...Array(end - start + 1)].map((_, i) => start + i);
+
+//   const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map(
+//     (repo) => `/blog/page/${repo}`
+//   );
+
+//   return { paths, fallback: false };
+// };
+
+// // データを取得
+// export const getStaticProps = async (context) => {
+//   const id = context.params.id;
+
+//   const data = await client.get({
+//     endpoint: "works",
+//     queries: { offset: (id - 1) * 3, limit: 3 },
+//   });
+
+//   return {
+//     props: {
+//       works: data.contents,
+//       totalCount: data.totalCount,
+//     },
+//   };
+// };

@@ -1,14 +1,13 @@
 import Head from "next/head";
 import { client } from "../libs/client";
-import Link from "next/link";
 import Layout, { siteTitle } from "../compornents/layout";
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-// import ScrollEvent from "../compornents/ScrollEvent";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollEvent from "../compornents/ScrollEvent";
+import { gsap } from "gsap/dist/gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,8 +29,8 @@ export default function Home({ data }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="home">
-          <div className="box"></div>
           {/* <ScrollEvent /> */}
+          <div className="box"></div>
           <p className="home__hero">Coding and Design</p>
         </main>
       </Layout>

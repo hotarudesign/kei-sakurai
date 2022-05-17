@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/Works.jtsx",
-    "pages/Works.js"
+    "pages/Works.js",
+    "next.config.js"
   ],
   "exclude": ["node_modules"]
 }
