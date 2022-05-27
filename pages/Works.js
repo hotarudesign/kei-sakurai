@@ -6,7 +6,7 @@ import WorksTitle from "../compornents/Works/WorksTitle";
 import WorksDetail from "../compornents/Works/WorksDetail";
 import { motion } from "framer-motion";
 
-export default function Works({ works, totalCount }) {
+export default function Works({ works }) {
   return (
     <motion.div
       initial={{ opacity: 0 }} // 初期状態
