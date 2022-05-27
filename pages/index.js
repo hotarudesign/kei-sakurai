@@ -6,7 +6,7 @@ import ScrollEvent from "../compornents/ScrollEvent";
 import HomeHero from "../compornents/homeHero";
 import Opening from "../compornents/loading";
 
-export default function Home({ data }) {
+export default function Home() {
   return (
     <div>
       <Opening />
