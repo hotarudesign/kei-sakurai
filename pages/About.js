@@ -57,7 +57,7 @@ const slideItemLeft = {
   },
 };
 
-export default function About({ about }) {
+export default function About() {
   return (
     <motion.div
       initial={{ opacity: 0 }} // 初期状態
