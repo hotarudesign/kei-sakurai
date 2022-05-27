@@ -1,3 +1,17 @@
+$bgColor: #f7efd9;
+
+$ipro: 1024px;
+@mixin ipro {
+  @media (max-width: ($ipro)) {
+    @content;
+  }
+}
+$ipad: 768px;
+@mixin ipad {
+  @media (max-width: ($ipad)) {
+    @content;
+  }
+}
 $sp: 500px;
 @mixin sp {
   @media (max-width: ($sp)) {
@@ -6,51 +20,72 @@ $sp: 500px;
 }
 
 .header {
-  max-width: 1280px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 2% 1%;
+  padding: 0 7% 1%;
+  z-index: 1;
+  transition: all 0.5s;
   @include sp {
-    position: relative;
-    padding: 8% 0;
+    height: 60px;
   }
+  &.isHeightOver {
+    background: #333;
+    color: $bgColor;
+    transition: all 0.5s;
+    box-shadow: 0 0 20px #000;
+    opacity: 0.7;
+  }
+
   .g-nav__list {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    transition: all 0.5s;
     @include sp {
       position: absolute;
-      top: 15%;
-      right: 5px;
-      flex-direction: column;
+      top: 0%;
+      left: 50%;
+      width: 85%;
+      transform: translateX(-50%);
     }
     &_item {
       font-size: 40px;
+      transition: all 0.5s;
+      &.isHeightOver {
+        @media (min-width: ($sp)) {
+          font-size: 30px !important;
+          transition: all 0.5s;
+        }
+      }
       @include sp {
         margin-bottom: 10%;
-        font-size: 26px;
+        font-size: 16px;
       }
       &.logo {
         position: relative;
         top: 10px;
         font-size: 80px;
         font-weight: bold;
+        transition: all 0.5s;
+        &.isHeightOver {
+          @media (min-width: ($sp)) {
+            font-size: 60px !important;
+            transition: all 0.5s;
+          }
+          @include sp {
+            font-size: 40px !important;
+          }
+        }
         @include sp {
-          display: none;
           top: 8px;
           font-size: 40px;
         }
       }
-    }
-  }
-  .logo_sp {
-    display: none;
-    @include sp {
-      display: inline-block;
-      margin-top: 10%;
-      font-size: 80px;
-      font-weight: bold;
-      line-height: 1em;
     }
   }
 }

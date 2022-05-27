@@ -1,6 +1,19 @@
+$bgColor: #f7efd9;
 $numColor: #b2b2b2;
 $linkColor: #0070f3;
 
+$ipro: 1024px;
+@mixin ipro {
+  @media (max-width: ($ipro)) {
+    @content;
+  }
+}
+$ipad: 768px;
+@mixin ipad {
+  @media (max-width: ($ipad)) {
+    @content;
+  }
+}
 $sp: 500px;
 @mixin sp {
   @media (max-width: ($sp)) {

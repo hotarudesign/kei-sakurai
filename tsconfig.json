@@ -16,12 +16,20 @@
     "jsx": "preserve"
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/Works.jtsx",
-    "pages/Works.js",
-    "next.config.js"
+    // "next-env.d.ts",
+    // "**/*.ts",
+    // "**/*.tsx",
+    // "pages/Works.jtsx",
+    // "pages/Works.tsx",
+    "next.config.js",
+    "pages/blog/[id].js",
+    "pages/index.js",
+    "compornents/About/AboutTextBottom.jsx",
+    "compornents/About/AboutTextSkill.jsx",
+    "compornents/ScrollEvent.jsx",
+    "compornents/Pagination.jsx",
+    "pages/_app.js",
+    "compornents/About/AboutImage.jsx"
   ],
   "exclude": ["node_modules"]
 }
