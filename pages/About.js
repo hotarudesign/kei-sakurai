@@ -5,58 +5,6 @@ import AboutTextBottom from "../compornents/About/AboutTextBottom";
 import AboutTextSkill from "../compornents/About/AboutTextSkill";
 import { motion } from "framer-motion";
 
-const slideItemRight = {
-  offscreen: {
-    x: 200,
-    opacity: 0,
-  },
-  onscreen: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.2,
-      duration: 0.8,
-    },
-  },
-  onscreenlate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.2,
-      duration: 0.8,
-      delay: 0.5,
-    },
-  },
-};
-
-const slideItemLeft = {
-  offscreen: {
-    x: -200,
-    opacity: 0,
-  },
-  onscreen: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.2,
-      duration: 0.8,
-    },
-  },
-  onscreenlate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.2,
-      duration: 0.8,
-      delay: 0.5,
-    },
-  },
-};
-
 export default function About() {
   return (
     <motion.div
@@ -68,24 +16,10 @@ export default function About() {
         <main className="about">
           <div className="about__inner">
             <div className="about__topbox">
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.4 }}
-                variants={slideItemLeft}
-              >
-                <AboutImage />
-              </motion.div>
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreenlate"
-                viewport={{ once: true, amount: 0.4 }}
-                variants={slideItemRight}
-              >
-                <AboutTextTop
-                  top={`昔から何かを一から作って誰かに届けることが好きでした。届けた相手の方に喜んでいただける制作を行い、その方の成功に繋がる体験を提供することを第一に考えて副業ビジネスに取り組んでいます。お客様が求めていることは何か、どうしてWebサイトやLPを制作して欲しいのか。そんな背景は原点の部分から把握し、お客様が思い描いた効果を制作物から発揮できるように取り組んでいます。`}
-                />
-              </motion.div>
+              <AboutImage className="about-image" />
+              <AboutTextTop
+                top={`昔から何かを一から作って誰かに届けることが好きでした。届けた相手の方に喜んでいただける制作を行い、その方の成功に繋がる体験を提供することを第一に考えて副業ビジネスに取り組んでいます。お客様が求めていることは何か、どうしてWebサイトやLPを制作して欲しいのか。そんな背景は原点の部分から把握し、お客様が思い描いた効果を制作物から発揮できるように取り組んでいます。`}
+              />
             </div>
             <div className="about__bottombox">
               <AboutTextBottom

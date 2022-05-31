@@ -1,7 +1,7 @@
 import gsap from "gsap/dist/gsap";
 import { useEffect } from "react";
 
-export default function Opening({}) {
+export default function Opening() {
   useEffect(() => {
     const loaderBg = ".loader-bg";
     const loaderTitle = ".loader-bg-title";
