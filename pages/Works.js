@@ -71,6 +71,60 @@ export default function Works({ works }) {
                   <WorksTitle title={`サムネイル制作`} />
                   <div className="works__archive_imgwrap">
                     <Image
+                      src="/images/thumbnail_4.png"
+                      width={1280}
+                      height={720}
+                    />
+                  </div>
+                  <WorksDetail
+                    content={`物販コミュニティを主宰されている方の対談動画とサムネイルを制作させていただきました。`}
+                  />
+                </motion.div>
+              </li>
+              <li className="works__container_item">
+                <motion.div
+                  initial={{
+                    y: -40,
+                    opacity: 0,
+                  }} // 初期状態
+                  animate={{
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.5,
+                    },
+                  }} // マウント時
+                >
+                  <WorksTitle title={`サムネイル制作`} />
+                  <div className="works__archive_imgwrap">
+                    <Image
+                      src="/images/thumbnail_5.png"
+                      width={1280}
+                      height={720}
+                    />
+                  </div>
+                  <WorksDetail
+                    content={`物販コミュニティを主宰されている方の対談動画とサムネイルを制作させていただきました。`}
+                  />
+                </motion.div>
+              </li>
+              <li className="works__container_item">
+                <motion.div
+                  initial={{
+                    y: -40,
+                    opacity: 0,
+                  }} // 初期状態
+                  animate={{
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.5,
+                    },
+                  }} // マウント時
+                >
+                  <WorksTitle title={`サムネイル制作`} />
+                  <div className="works__archive_imgwrap">
+                    <Image
                       src="/images/thumbnail_1.png"
                       width={1280}
                       height={720}

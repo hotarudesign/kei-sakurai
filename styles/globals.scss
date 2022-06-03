@@ -188,7 +188,7 @@ img {
   }
   &__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
     margin-bottom: 2%;
@@ -197,12 +197,23 @@ img {
     }
     &_item {
       width: 30%;
+      margin-left: 5%;
       margin-bottom: 2%;
+      &:first-child {
+        margin-left: 0%;
+      }
+      &:nth-child(4) {
+        margin-left: 0;
+      }
+      &:nth-child(7) {
+        margin-left: 0;
+      }
       &:hover {
         cursor: pointer;
       }
       @include v.ipro {
         width: 32%;
+        margin-left: 0;
         margin-bottom: 4%;
       }
       @include v.sp {
